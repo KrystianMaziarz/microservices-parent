@@ -33,13 +33,5 @@ public class ProductService {
 
         return productRepository.findAll().stream().map(productMapper::mapToProductResponse).toList();
     }
-
-    public ProductEntity getProductOrCreateNew(Long id) {
-
-        ProductEntity productEntity = productRepository.findById(id).orElse(new ProductEntity());
-
-        productRepository.save(productEntity);
-
-
-    }
 }
+
