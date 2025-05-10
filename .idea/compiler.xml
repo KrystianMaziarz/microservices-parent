@@ -3,27 +3,52 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for warehouse-service" enabled="true">
+      <profile name="Annotation profile for order-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
-        <module name="bakery-service" />
-        <module name="warehouse-service" />
         <module name="order-service" />
+      </profile>
+      <profile name="Annotation profile for invoice-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="product-service" />
+        <module name="user-service" />
+        <module name="mail-service" />
+        <module name="invoice-service" />
+      </profile>
+      <profile name="Annotation profile for recipe-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="recipe-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="orcderservice" target="21" />
+      <module name="warehouse-service" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="bakery-service" options="-parameters" />
+      <module name="invoice-service" options="-parameters" />
+      <module name="mail-service" options="-parameters" />
       <module name="orcderservice" options="-parameters" />
       <module name="order-service" options="-parameters" />
+      <module name="product-service" options="-parameters" />
+      <module name="recipe-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
       <module name="warehouse-service" options="-parameters" />
     </option>
   </component>
