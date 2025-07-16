@@ -9,12 +9,12 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Entity
-@Table (name = "t_orders")
+@Table (name = "orders")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class OrderEntity {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

@@ -1,7 +1,7 @@
 package com.pl.orderservice.service;
 
-import com.pl.orderservice.dto.OrderRequest;
-import com.pl.orderservice.model.Order;
+import com.pl.orderservice.dto.OrderRequestDTO;
+import com.pl.orderservice.model.OrderEntity;
 import com.pl.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,13 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    public void placeOrder(OrderRequest orderRequest) {
+    public void placeOrder(OrderRequestDTO orderRequestDTO) {
 
-        Order order = new Order();
-        order.setOrderNumber(UUID.randomUUID().toString());
-        order.setSkuCode(orderRequest.skuCode());
-        order.setPrice(orderRequest.price());
-        order.setQuantity(orderRequest.quantity());
-        orderRepository.save(order);
+        OrderEntity orderEntity = new OrderEntity();
+        orderEntity.setOrderNumber(UUID.randomUUID().toString());
+        orderEntity.setSkuCode(orderRequestDTO.skuCode());
+        orderEntity.setPrice(orderRequestDTO.price());
+        orderEntity.setQuantity(orderRequestDTO.quantity());
+        orderRepository.save(orderEntity);
     }
 }
