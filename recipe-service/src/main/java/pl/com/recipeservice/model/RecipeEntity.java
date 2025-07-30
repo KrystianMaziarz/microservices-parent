@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "product")
+@Table(name = "recipe")
 public class RecipeEntity {
 
     @Id
@@ -23,6 +24,11 @@ public class RecipeEntity {
     private String name;
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<RecipeIngredientsEntity> ingredients;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecipeIngredientsEntity> ingredients = new ArrayList<>();
+
+    public void addIngredient(RecipeIngredientsEntity ingredient) {
+        ingredients.add(ingredient);
+        ingredient.setRecipe(this);
+    }
 }

@@ -22,7 +22,8 @@ public class RecipeIngredientsEntity {
     private Double quantity;
     private String unit;
 
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "recipe_id", nullable = false)
     private RecipeEntity recipe;
 
 }
