@@ -21,7 +21,7 @@ public class GeneratePDFService {
 
 	}
 
-	public byte[] generateEmptyDocument() throws DocumentCreationException {
+	public byte[] generateEmptyDocument() {
 
 		Document doc = new Document();
 		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
